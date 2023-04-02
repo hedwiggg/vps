@@ -1,0 +1,12 @@
+1. 用vim打开并修改文件 （新手不会使用vim的话，推荐把vim改成用nano）
+
+sudo vim /etc/systemd/logind.conf
+2. 找到文本内这一行： #HandleLidSwitch=suspend
+
+         1）将前面的#删除，这个是注释符号，去掉才会让这一句配置生效
+
+         2）将suspend （暂停）改成 ignore（无操作）
+
+3.  用以下命令重启服务，使配置生效
+
+service systemd-logind restart
